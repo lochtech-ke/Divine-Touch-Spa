@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styles from "./services.module.css";
+
+export const revalidate = 3600; // Revalidate at most every hour
 // import prisma from "@/lib/prisma";
 
 const categories = [

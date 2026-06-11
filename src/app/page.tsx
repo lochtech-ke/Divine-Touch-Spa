@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./page.module.css";
+import { Sparkles, Heart, Crown, Clock, Star, MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
+
+export const revalidate = 3600; // Revalidate at most every hour
 
 const featuredServices = [
-  { title: "Swedish Massage", desc: "A classic full-body massage to ease tension and improve circulation.", price: "from $80", duration: "60 min", icon: "💆" },
-  { title: "Tantric Yoni Massage", desc: "A deeply relaxing and sensual healing experience for full body restoration.", price: "from $130", duration: "60 min", icon: "🌸" },
-  { title: "Bridal Makeup", desc: "Look your absolute best for your special day with our expert artists.", price: "from $150", duration: "90 min", icon: "💄" },
-  { title: "Hot Stone Massage", desc: "Melt away stress with heated volcanic stones placed on key body points.", price: "from $95", duration: "60 min", icon: "🔥" },
+  { title: "Swedish Massage", desc: "A classic full-body massage to ease tension and improve circulation.", price: "from $80", duration: "60 min", image: "/images/massage.png" },
+  { title: "Forever Living Facial", desc: "A premium organic facial treatment that restores your natural glow and vitality.", price: "from $110", duration: "45 min", image: "/images/facial.png" },
+  { title: "Luxury Manicure", desc: "Complete nail care, cuticle treatment, and premium polish application.", price: "from $45", duration: "45 min", image: "/images/nails.png" },
 ];
 
 const testimonials = [
@@ -47,10 +50,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={styles.heroOrbs}>
-          <div className={styles.orb1} />
-          <div className={styles.orb2} />
-          <div className={styles.orb3} />
+        <div className={styles.heroBackground}>
+          <Image 
+            src="/images/hero.png" 
+            alt="Divine Touch Spa Ambiance" 
+            fill
+            priority
+            className={styles.heroImage}
+          />
+          <div className={styles.heroOverlay} />
         </div>
         <div className={`container ${styles.heroContent}`}>
           <div className="corner-brackets animate-fade-in" style={{ padding: '3rem', textAlign: 'center' }}>
@@ -109,11 +117,15 @@ export default function Home() {
         <div className={styles.serviceGrid}>
           {featuredServices.map((service, i) => (
             <div key={i} className={`glass ${styles.serviceCard}`}>
-              <div className={styles.serviceCardIcon}>{service.icon}</div>
-              <h3>{service.title}</h3>
+              <div className={styles.serviceImageContainer}>
+                <Image src={service.image} alt={service.title} fill className={styles.serviceImage} />
+              </div>
+              <div className={styles.serviceCardContent}>
+                <h3>{service.title}</h3>
               <p>{service.desc}</p>
               <div className={styles.serviceMeta}>
                 <span className={styles.serviceDuration}>⏱ {service.duration}</span>
+              </div>
               </div>
               <div className={styles.serviceFooter}>
                 <span className={styles.servicePrice}>{service.price}</span>

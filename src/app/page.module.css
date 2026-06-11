@@ -84,51 +84,21 @@
 }
 
 /* Floating orbs */
-.heroOrbs {
+.heroBackground {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  overflow: hidden;
+  z-index: 0;
 }
 
-.orb1, .orb2, .orb3 {
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.4;
-  animation: float 8s ease-in-out infinite;
-}
-
-.orb1 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #ce93d8, transparent);
-  top: -100px;
-  left: -100px;
-  animation-delay: 0s;
-}
-
-.orb2 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, #f48fb1, transparent);
-  bottom: -80px;
-  right: -80px;
-  animation-delay: 2s;
-}
-
-.orb3 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, #80cbc4, transparent);
-  top: 50%;
-  left: 60%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-30px) scale(1.05); }
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .heroContent {
@@ -138,31 +108,26 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-}
-
-.heroEyebrow {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #9575cd;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: white; /* Force white text over the dark overlay */
 }
 
 .title {
   font-size: clamp(2.5rem, 6vw, 5.5rem);
   line-height: 1.1;
-  color: var(--color-text);
+  color: white;
   margin-bottom: var(--space-sm);
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .subtitle {
   font-size: 1.2rem;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-md);
   max-width: 600px;
   line-height: 1.7;
 }
+
+
 
 .heroButtons {
   display: flex;
@@ -271,12 +236,30 @@
 }
 
 .serviceCard {
-  padding: var(--space-md);
   border-radius: 20px;
   transition: transform var(--transition-medium), box-shadow var(--transition-medium);
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255,255,255,0.4);
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.serviceImageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.serviceImage {
+  object-fit: cover;
+}
+
+.serviceCardContent {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .serviceCard:hover {
@@ -284,10 +267,7 @@
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
 }
 
-.serviceCardIcon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
+
 
 .serviceCard h3 {
   font-size: 1.2rem;
