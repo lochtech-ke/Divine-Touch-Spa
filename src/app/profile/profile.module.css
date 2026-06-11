@@ -1,0 +1,238 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.nav {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.email {
+  color: var(--color-text-light);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tabBtn {
+  padding: 1rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: all var(--transition-fast);
+}
+
+.tabBtn:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+.tabBtn.active {
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+.logoutBtn {
+  margin-top: var(--space-md);
+  color: #dc2626;
+}
+
+.logoutBtn:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.content {
+  background: var(--color-surface);
+  padding: var(--space-lg);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.content h2 {
+  margin-bottom: var(--space-md);
+}
+
+.bookingList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.bookingCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.bookingCard h3 {
+  margin: 0 0 0.5rem 0;
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+}
+
+.bookingCard p {
+  margin: 0;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statusBadge[data-status="CONFIRMED"] {
+  background: var(--color-accent);
+  color: #047857;
+}
+
+.statusBadge[data-status="COMPLETED"] {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.loyaltyCard {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: var(--space-md);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text);
+}
+
+.pointsDisplay {
+  background: rgba(255,255,255,0.5);
+  padding: 1.5rem;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.points {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  line-height: 1;
+}
+
+.pointsLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.tierInfo h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.tierInfo p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.rewardsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rewardItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.rewardItem span {
+  font-weight: 500;
+}
+
+.formGroup {
+  margin-bottom: var(--space-md);
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}

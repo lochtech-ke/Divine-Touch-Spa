@@ -1,0 +1,206 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* slightly darker neutral background for admin */
+}
+
+.sidebar {
+  width: 280px;
+  background: #1e1e2f;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: var(--space-md);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.adminBadge {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  background: var(--color-primary);
+  color: #1e1e2f;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+}
+
+.navMenu {
+  flex-grow: 1;
+  padding: var(--space-md) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navItem {
+  background: transparent;
+  border: none;
+  color: #a1a1aa;
+  padding: 1rem var(--space-md);
+  text-align: left;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navItem:hover {
+  background: rgba(255,255,255,0.05);
+  color: #ffffff;
+}
+
+.navItem.active {
+  background: var(--color-primary-dark);
+  color: #1e1e2f;
+  border-right: 4px solid var(--color-primary);
+}
+
+.exitLink {
+  padding: var(--space-md);
+  color: #a1a1aa;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  transition: color var(--transition-fast);
+}
+
+.exitLink:hover {
+  color: #ffffff;
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  background: #ffffff;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.adminProfile {
+  font-weight: 500;
+  font-size: 0.9rem;
+  background: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+.contentArea {
+  padding: var(--space-lg);
+  overflow-y: auto;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.searchInput {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  width: 300px;
+  font-family: var(--font-sans);
+}
+
+.tableContainer {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #f9fafb;
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusBadge.confirmed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.statusBadge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.statusBadge.active_badge {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.statusBadge.inactive_badge {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.actionBtn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.actionBtn:hover {
+  background: #f3f4f6;
+}

@@ -1,0 +1,441 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.nav {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.logo span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.navLinks a {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  transition: color var(--transition-fast);
+}
+
+.navLinks a:hover {
+  color: var(--color-text);
+}
+
+.hero {
+  background: linear-gradient(135deg, #f3e5f5 0%, #e8eaf6 100%);
+  padding: var(--space-lg) 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* Status Card */
+.statusCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  background: linear-gradient(135deg, #7e57c2, #9c27b0);
+  color: #fff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 20px 60px rgba(126, 87, 194, 0.3);
+}
+
+@media (max-width: 768px) {
+  .statusCard {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statusLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tierBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.tierIcon {
+  font-size: 1.5rem;
+}
+
+.tierName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.pointsDisplay {
+  display: flex;
+  flex-direction: column;
+}
+
+.pointsNumber {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pointsLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.progressBar {
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1s ease;
+}
+
+.progressNote {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.statusRight {
+  background: rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.statusRight h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.perkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.perkList li {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkmark {
+  color: #ce93d8;
+  font-weight: 700;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tabBtn {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all var(--transition-fast);
+  text-transform: capitalize;
+}
+
+.activeTab {
+  color: #7e57c2;
+  border-bottom-color: #7e57c2;
+  font-weight: 600;
+}
+
+.tabContent {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Earn Grid */
+.earnGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-sm);
+  margin-top: 1.5rem;
+}
+
+.earnCard {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.earnCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.earnIcon {
+  font-size: 2rem;
+}
+
+.earnPoints {
+  font-size: 0.85rem;
+  color: #7e57c2;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Tier Grid */
+.tierGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .tierGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tierCard {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid;
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.currentTierCard {
+  box-shadow: 0 8px 30px rgba(126, 87, 194, 0.2);
+  transform: scale(1.02);
+}
+
+.tierHeader {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tierRange {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.tierPerks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.currentBadge {
+  margin-top: 1rem;
+  background: #f3e5f5;
+  color: #7e57c2;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  display: inline-block;
+}
+
+/* Rewards Grid */
+.rewardsIntro {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.rewardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-sm);
+}
+
+.rewardCard {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.rewardCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.locked {
+  opacity: 0.65;
+}
+
+.popularBadge {
+  position: absolute;
+  top: -10px;
+  right: 1rem;
+  background: #ff8f00;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rewardCategory {
+  font-size: 0.75rem;
+  color: #7e57c2;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rewardName {
+  font-size: 1rem;
+  font-family: var(--font-serif);
+}
+
+.rewardPoints {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.redeemBtn {
+  margin-top: auto;
+  border-radius: 8px;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* History Table */
+.historyTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.historyTable th,
+.historyTable td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.historyTable thead {
+  background: #f9f9f9;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.historyTable th {
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.historyTable tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.positive {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.negative {
+  color: #c62828;
+  font-weight: 700;
+}

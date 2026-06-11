@@ -1,0 +1,136 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.nav {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.bookingCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.progress {
+  display: flex;
+  background: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-sm);
+  font-weight: 500;
+  color: var(--color-text-light);
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.step.active {
+  color: var(--color-text);
+  border-bottom-color: var(--color-primary-dark);
+  background: rgba(255,255,255,0.5);
+}
+
+.content {
+  padding: var(--space-lg);
+}
+
+.content h2 {
+  text-align: center;
+  margin-bottom: var(--space-md);
+  font-size: 1.8rem;
+}
+
+.formGroup {
+  margin-bottom: var(--space-md);
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary-dark);
+}
+
+.therapistGrid, .timeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.therapistBtn, .timeBtn {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+.therapistBtn:hover, .timeBtn:hover {
+  border-color: var(--color-primary-dark);
+  background: var(--color-primary);
+}
+
+.therapistBtn.selected, .timeBtn.selected {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.actions button:only-child {
+  margin-left: auto;
+}
+
+.summary {
+  background: var(--color-background);
+  padding: var(--space-md);
+  border-radius: 8px;
+  border: 1px dashed var(--color-border);
+}
+
+.summary p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
